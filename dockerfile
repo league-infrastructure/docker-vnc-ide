@@ -18,10 +18,16 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/reposit
     supervisor \
     bash \
     fluxbox \
-    firefox \
+    python3 py3-pip thonny \
     novnc \
-    websockify && \
-    ln -s /usr/share/novnc/vnc_lite.html /usr/share/novnc/index.html
+    websockify \
+    ttf-dejavu \
+    ttf-freefont \
+    fontconfig \
+    freetype \
+    cairo && \
+    ln -s /usr/share/novnc/vnc_lite.html /usr/share/novnc/index.html && \
+    fc-cache -f -v
 
 # Copy configuration files
 COPY supervisord.conf /etc/supervisord.conf
