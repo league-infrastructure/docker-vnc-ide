@@ -13,9 +13,5 @@ fi
 : ${VNC_RESOLUTION:=1280x1024}
 echo "Current VNC resolution is: ${VNC_RESOLUTION}"
 
-# If STARTING_WEBSITE_URL is not set, use a default website
-: ${STARTING_WEBSITE_URL:=https://www.google.com}
-echo "Current starting website is: ${STARTING_WEBSITE_URL}"
-
 # Start Supervisor
 exec supervisord -c /etc/supervisord.conf
